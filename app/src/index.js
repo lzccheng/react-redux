@@ -1,8 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM , {render} from 'react-dom';
 import './index.css';
+import Header from './component/header.js';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import All from './component/App.js';
+import './css/App.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+let arr = [
+  <All />
+];
+render(arr,document.getElementById('box'));
+ReactDOM.render([<App />,<Header />], document.getElementById('root'));
+// registerServiceWorker();
