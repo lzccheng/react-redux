@@ -19,7 +19,6 @@ const redu = (sta={},action)=>{
    switch(action.type){
      case 'update_age':
       return {
-        ...sta,
         age:action.age
       }
     default:
@@ -31,11 +30,11 @@ const ss = createStore(redu(state));
 
 
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('box'));
+// render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('box'));
 
 class Tt extends React.Component{
   render(){
@@ -44,6 +43,8 @@ class Tt extends React.Component{
     )
   }
 }
+
+
 
 render(
   <Provider store={ss}>
