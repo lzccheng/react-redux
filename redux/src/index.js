@@ -65,15 +65,11 @@ let mapStateToProps = (state)=>{
 }
 
 
-class Content extends React.Component {
-  static propTypes = {
-    themeColor: PropTypes.string
-  }
-
+class content extends React.Component {
   render () {
     return (
       <div>
-        <p style={{ color: this.props.themeColor }}>React.js 小书内容</p>
+        <p style={{ color: this.props.themeColor }} onClick={this.props.onClick}>React.js 小书内容</p>
       </div>
     )
   }
@@ -91,8 +87,8 @@ const dis = (dis)=>{
     }
   }
 }
-Content = connect(a)(Content)
-
+let Content = connect(a,dis)(content)
+console.log('Content',Content);
 render(<Provider store={store}><Content /></Provider>,document.getElementById('box'));
 
 ReactDOM.render(<App />, document.getElementById('root'));
